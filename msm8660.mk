@@ -14,8 +14,8 @@
 
 # Qualcomm scripts
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/prebuilt/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
-    device/htc/pyramid/prebuilt/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh
+    device/htc/doubleshot/prebuilt/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
+    device/htc/doubleshot/prebuilt/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -99,13 +99,13 @@ PRODUCT_PACKAGES += \
 
 # Media configuration
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/configs/audio_policy.conf:system/etc/audio_policy.conf \
-    device/htc/pyramid/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/pyramid/configs/media_profiles.xml:system/etc/media_profiles.xml
+    device/htc/doubleshot/configs/audio_policy.conf:system/etc/audio_policy.conf \
+    device/htc/doubleshot/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    device/htc/doubleshot/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # Thermal configuration
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/configs/thermald.conf:system/etc/thermald.conf
+    device/htc/doubleshot/configs/thermald.conf:system/etc/thermald.conf
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi

@@ -25,7 +25,7 @@ BOARD_VENDOR := htc
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
-TARGET_BOOTLOADER_BOARD_NAME := pyramid
+TARGET_BOOTLOADER_BOARD_NAME := doubleshot
 BOARD_WANTS_EMMC_BOOT := true
 TARGET_CPU_VARIANT := cortex-a9
 
@@ -34,10 +34,10 @@ BOARD_KERNEL_BASE := 0x48000000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01400000
 BOARD_KERNEL_PAGE_SIZE := 2048
 BUILD_KERNEL := true
-TARGET_KERNEL_CONFIG := senny_defconfig
-TARGET_KERNEL_SOURCE := kernel/htc/pyramid
-TARGET_SPECIFIC_HEADER_PATH := device/htc/pyramid/include
-BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_suspend=1 androidboot.selinux=permissive
+TARGET_KERNEL_CONFIG := doubleshot_defconfig
+TARGET_KERNEL_SOURCE := kernel/htc/doubleshot
+TARGET_SPECIFIC_HEADER_PATH := device/htc/doubleshot/include
+BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=doubleshot no_console_suspend=1 
 
 # Board
 TARGET_BOARD_PLATFORM := msm8660
@@ -80,15 +80,15 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUEDROID_VENDOR_CONF := device/htc/pyramid/bluetooth/vnd_msm8660.txt
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/pyramid/bluetooth/include
+BOARD_BLUEDROID_VENDOR_CONF := device/htc/doubleshot/bluetooth/vnd_msm8660.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/doubleshot/bluetooth/include
 
 # Graphics
 COMMON_GLOBAL_CFLAGS += -DFORCE_SCREENSHOT_CPU_PATH
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
-BOARD_EGL_CFG := device/htc/pyramid/configs/egl.cfg
+BOARD_EGL_CFG := device/htc/doubleshot/configs/egl.cfg
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
 
 # Filesystem
@@ -103,14 +103,14 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storag
 # GPS
 BOARD_USES_QCOM_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := doubleshot
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 TARGET_PROVIDES_LIBLIGHTS := true
 
 # Bluetooth/Wifi
--include device/htc/pyramid/bcmdhd.mk
+-include device/htc/doubleshot/bcmdhd.mk
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -122,7 +122,7 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_FSTAB := device/htc/pyramid/ramdisk/fstab.pyramid
+TARGET_RECOVERY_FSTAB := device/htc/doubleshot/ramdisk/fstab.doubleshot
 USE_SET_METADATA := false
 
 # Webkit

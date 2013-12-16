@@ -1,5 +1,5 @@
 VENDOR=htc
-DEVICE=villec2
+DEVICE=doubleshot
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 

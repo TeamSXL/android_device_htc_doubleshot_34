@@ -61,11 +61,14 @@ PRODUCT_COPY_FILES += device/htc/doubleshot/configs/thermald.conf:system/etc/the
 
 # Keylayouts and Keychars
 PRODUCT_COPY_FILES += \
-    device/htc/doubleshot/keychars/doubleshot-keypad.kcm:system/usr/keychars/doubleshot-keypad.kcm \
     device/htc/doubleshot/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/htc/doubleshot/keylayout/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl \
+    device/htc/doubleshot/keylayout/doubleshot-keypad.kl:system/usr/keylayout/doubleshot-keypad.kl \
     device/htc/doubleshot/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
-    device/htc/doubleshot/keylayout/doubleshot-keypad.kl:system/usr/keylayout/doubleshot-keypad.kl
+    device/htc/doubleshot/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
+    device/htc/doubleshot/keychars/doubleshot-keypad.kcm:system/usr/keychars/doubleshot-keypad.kcm \
+    device/htc/doubleshot/keychars/BT_HID.kcm.bin:system/usr/keychars/BT_HID.kcm.bin \
+    device/htc/doubleshot/keychars/qwerty.kcm:system/usr/keychars/qwerty.kcm \
+    device/htc/doubleshot/keychars/qwerty2.kcm:system/usr/keychars/qwerty2.kcm
 
 # Input device config
 PRODUCT_COPY_FILES += \

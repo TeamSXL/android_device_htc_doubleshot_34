@@ -160,3 +160,6 @@ TARGET_USES_C2D_COMPOSITION := true
 
 # Misc
 COMMON_GLOBAL_CFLAGS += -DHTCLOG
+
+#multitouch games need this:
+ BOARD_USE_LEGACY_TOUCHSCREEN := true

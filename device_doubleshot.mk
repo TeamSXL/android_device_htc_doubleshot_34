@@ -26,6 +26,9 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/doubleshot/overlay
 PRODUCT_PACKAGES += \
     gps.doubleshot
 
+## The gps config appropriate for this device
+ PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
+
 # Wifi
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
 

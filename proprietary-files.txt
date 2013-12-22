@@ -108,3 +108,46 @@ lib/libmpl.so
 # Webkit
 lib/libv8.so
 
+# DS-Specific:
+
+# audio:
+bin/snd
+bin/snd8k
+bin/sound8x60
+lib/libaudcalwb.so
+
+# g sensor:
+bin/akmd
+
+# camera:
+bin/awb_camera
+bin/cam_ins_spmo
+bin/lsc_camera
+lib/libchromatix_imx105_default_video.so
+lib/libchromatix_imx105_preview.so
+lib/libchromatix_imx105_zsl.so
+lib/libchromatix_mt9d015_default_video.so
+lib/libchromatix_mt9d015_default_zsl.so
+lib/libchromatix_mt9d015_preview.so
+
+
+# accelerometer:
+bin/bma150_usr
+
+# bluetooth:
+bin/btld
+
+# hdmi:
+bin/hdmid
+
+# webkit:
+lib/libwebkitaccel.so
+
+# misc:
+bin/htc_ebdlogd
+bin/logcat2
+bin/ser2net
+bin/usbnet
+etc/vpimg
+xbin/wireless_modem
+

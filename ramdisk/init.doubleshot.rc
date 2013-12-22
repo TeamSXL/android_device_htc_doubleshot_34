@@ -110,6 +110,12 @@ on post-fs-data
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
 
+#for CIQ ipc
+    mkdir /app-cache/ciq 0711 root system
+    mkdir /app-cache/ciq/socket 0777 root system
+
+    mkdir /data/radio 0770 radio radio
+
 on boot
     # for systrace
     mount debugfs /sys/kernel/debug /sys/kernel/debug
@@ -192,6 +198,48 @@ on boot
     chown system system /sys/devices/platform/panel_3d/3D_mode
     chmod 0664 /sys/devices/platform/panel_3d/3D_mode
 
+    # for wireless modem
+    chown system system /sys/module/serial/parameters/modem_enabled
+    chown system system /dev/ttyHSUSB0
+    chown system system /dev/ttySA0
+    chown system system /dev/smd9
+
+    ## Imported from doubleshot GB init.rc
+    # Permissions for Physical Keyboard
+    chown system system /sys/class/leds/caps/brightness
+    chown system system /sys/class/leds/func/brightness
+
+    # Camera
+    chown media system /sys/android_camera/lensinfo
+    chown media system /sys/android_camera/macrothreshold
+    chown media system /sys/android_camera/node
+    chown media system /sys/android_camera/sensor
+    chown media system /sys/android_camera2/htcwc
+    chown media system /sys/android_camera2/node
+    chown media system /sys/android_camera2/sensor
+
+    # Camera LEDS
+    chown system system /sys/camera_led_status/
+    chown system system /sys/camera_led_status/led_ril_status
+    chown system system /sys/camera_led_status/led_wimax_status
+    chown system system /sys/camera_led_status/led_hotspot_status
+    chown system system /sys/camera_led_status/low_temp_limit
+    chown system system /sys/camera_led_status/low_cap_limit
+
+    # Other LEDs not set by default
+    chown system system /sys/class/leds/amber/off_timer
+    chown system system /sys/class/leds/green/off_timer
+
+    # Everything else
+    chown radio system /module/gpio_event/parameters/phone_call_status
+    ##
+ 
+    chown system /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
+
+    # for simlock
+    chown radio radio /dev/simlock
+    chmod 0660 /dev/simlock
+
     # sync fs
     chown system /sys/devices/platform/rs300000a7.65536/force_sync
     chown system /sys/devices/platform/rs300000a7.65536/sync_sts
@@ -221,10 +269,32 @@ service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk
       class late_start
       disabled
 
+
+# compass/accelerometer daemon
+service akmd /system/bin/akmd
+    class core
+    user compass
+    group compass misc input
+
+service iprenew_wlan0 /system/bin/dhcpcd -n
+    class late_start
+    disabled
+    oneshot
+
+# bugreport is triggered by the KEY_BACK and KEY_MENU keycodes
+service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
+    class late_start
+    disabled
+    oneshot
+    keycodes 158 139
+
 service hdmid /system/bin/hdmid
     class main
     socket hdmid stream 0660 root system graphics
     disabled
+
+on property:ro.emmc=1
+    start rmt_storage
 
 service htcbatt /system/bin/htcbatt
     class main

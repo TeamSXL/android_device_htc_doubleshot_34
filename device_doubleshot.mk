@@ -72,7 +72,7 @@ PRODUCT_COPY_FILES += \
 
 # Input device config
 PRODUCT_COPY_FILES += \
-    device/htc/doubleshot/idc/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc \
+    device/htc/doubleshot/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \
     device/htc/doubleshot/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
 
 # HTC BT Audio tune

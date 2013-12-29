@@ -37,7 +37,7 @@ BUILD_KERNEL := true
 TARGET_KERNEL_CONFIG := doubleshot_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/doubleshot
 TARGET_SPECIFIC_HEADER_PATH := device/htc/doubleshot/include
-BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=doubleshot no_console_suspend=1 
+BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=doubleshot no_console_suspend=1 androidboot.selinux=permissive
 
 # Board
 TARGET_BOARD_PLATFORM := msm8660
@@ -68,8 +68,6 @@ LOCAL_CFLAGS += LEGACY_LPA
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_QCOM_DISPLAY_VARIANT := legacy
-TARGET_QCOM_MEDIA_VARIANT := legacy
 
 # QCOM BSP (Board Support Package)
 TARGET_USES_QCOM_BSP := true
@@ -86,6 +84,8 @@ BOARD_BLUEDROID_VENDOR_CONF := device/htc/doubleshot/bluetooth/vnd_msm8660.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/doubleshot/bluetooth/include
 
 # Graphics
+TARGET_QCOM_DISPLAY_VARIANT := legacy
+TARGET_QCOM_MEDIA_VARIANT := legacy
 COMMON_GLOBAL_CFLAGS += -DFORCE_SCREENSHOT_CPU_PATH
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := true
